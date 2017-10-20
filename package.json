@@ -28,7 +28,6 @@
     "wdio-spec-reporter": "0.0.5"
   },
   "scripts": {
-    "debug": "./node_modules/.bin/wdio --debugCucumber",
     "help": "./node_modules/.bin/wdio --help",
     "kill-selenium": "kill -15 $( lsof -i:4444 -t )",
     "lint": "node ./node_modules/eslint/bin/eslint.js . --fix",
