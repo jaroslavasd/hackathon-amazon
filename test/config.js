@@ -3,14 +3,29 @@ const credentials = {
   password: 'MobileLife123',
 };
 
-const console = {
-  name: 'playstatio 4',
-  properties: {
-    type: 'Consoles',
-    shipsTo: 'Lithuania',
-    sort: 'price-asc-rank',
+const products = [
+  {
+    name: 'playstation 4',
+    properties: {
+      category: 'Consoles',
+      shipsTo: 'Lithuania',
+    },
   },
-};
+  {
+    name: 'ps4 camera',
+    properties: {
+      category: 'PlayStation 4 Virtual Reality Cameras',
+      shipsTo: 'Lithuania',
+    },
+  },
+  {
+    name: 'just dance 2018',
+    properties: {
+      category: 'PlayStation 4',
+      shipsTo: 'Lithuania',
+    },
+  },
+];
 
 module.exports.credentials = credentials;
-module.exports.console = console;
+module.exports.products = products;
