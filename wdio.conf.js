@@ -150,6 +150,8 @@ exports.config = {
     global.Assertion = chai.Assertion;
     global.assert = chai.assert;
     chai.Should();
+
+    browser.windowHandleMaximize();
   },
   //
   // Hook that gets executed before the suite starts
