@@ -62,7 +62,7 @@ exports.config = {
   //
   // Level of logging verbosity: silent | verbose | command | data | result | error
   // logLevel: 'verbose',
-  logLevel: 'silent',
+  logLevel: 'verbose',
   //
   // Enables colors for log output.
   coloredLogs: true,
@@ -75,7 +75,7 @@ exports.config = {
   baseUrl: 'https://amazon.com',
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 30000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -125,6 +125,7 @@ exports.config = {
   mochaOpts: {
     compilers: ['js:babel-register'],
     require: ['./test/helpers/common.js'],
+    timeout: 120000,
   },
   //
   // =====
@@ -150,7 +151,7 @@ exports.config = {
     global.Assertion = chai.Assertion;
     global.assert = chai.assert;
     chai.Should();
-
+    browser.timeouts('script', 60000);
     browser.windowHandleMaximize();
   },
   //
@@ -181,8 +182,9 @@ exports.config = {
   // },
   //
   // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
-  // afterTest: function (test) {
-  // },
+  afterTest() {
+    browser.reload();
+  },
   //
   // Hook that gets executed after the suite has ended
   // afterSuite: function (suite) {
