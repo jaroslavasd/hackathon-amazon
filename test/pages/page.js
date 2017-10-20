@@ -4,4 +4,4 @@ class Page {
   }
 }
 
-module.exports = Page;
+export default Page;
