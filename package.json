@@ -20,17 +20,23 @@
     "webdriverio": "~4.8.0"
   },
   "devDependencies": {
+    "allure-commandline": "~2.3.5",
     "eslint": "~4.9.0",
     "eslint-config-airbnb": "~16.0.0",
     "eslint-plugin-import": "~2.7.0",
     "eslint-plugin-jsx-a11y": "~6.0.2",
     "eslint-plugin-react": "~7.4.0",
-    "wdio-spec-reporter": "0.0.5"
+    "wdio-allure-reporter": "~0.1.2",
+    "wdio-spec-reporter": "~0.1.2"
   },
   "scripts": {
     "help": "./node_modules/.bin/wdio --help",
     "kill-selenium": "kill -15 $( lsof -i:4444 -t )",
     "lint": "node ./node_modules/eslint/bin/eslint.js . --fix",
+
+    "generate-report": "./node_modules/.bin/allure generate --clean",
+
+    "report": "npm run generate-report && ./node_modules/.bin/allure open",
     "test": "./node_modules/.bin/wdio wdio.conf.js"
 
   },
