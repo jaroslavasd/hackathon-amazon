@@ -37,7 +37,7 @@
     "generate-report": "./node_modules/.bin/allure generate --clean",
 
     "report": "npm run generate-report && ./node_modules/.bin/allure open",
-    "test": "npm test"
+    "test": "./node_modules/.bin/wdio wdio.conf.js"
 
   },
   "engines": {
