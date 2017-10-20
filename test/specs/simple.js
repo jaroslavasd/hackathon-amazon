@@ -5,7 +5,7 @@ import CartPage from '../pages/cart.page';
 import { products } from '../config';
 
 describe('amazon page', () => {
-  it('do shoopping for ', () => {
+  it('do shopping for ', () => {
     SignInPage.open();
     SignInPage.login();
 
