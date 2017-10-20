@@ -1,6 +1,7 @@
 import SearchPage from '../pages/search.page';
 import SignInPage from '../pages/signin.page';
 import ProductPage from '../pages/product.page';
+import CartPage from '../pages/cart.page';
 import { products } from '../config';
 
 describe('amazon page', () => {
@@ -25,5 +26,6 @@ describe('amazon page', () => {
 
       ProductPage.addToCart();
     });
+    CartPage.open();
   });
 });
