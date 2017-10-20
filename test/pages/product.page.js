@@ -1,5 +1,4 @@
 import Page from './page';
-import CartPage from './cart.page';
 
 class ProductPage extends Page {
   get addToCartButton() { return browser.element('#add-to-cart-button'); }
@@ -9,7 +8,6 @@ class ProductPage extends Page {
   addToCart() {
     this.previousCartCount = this.getCartCount();
     this.addToCartButton.click();
-    return new CartPage();
   }
 
   getAvailability() {
