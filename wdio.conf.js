@@ -61,7 +61,6 @@ exports.config = {
   sync: true,
   //
   // Level of logging verbosity: silent | verbose | command | data | result | error
-  // logLevel: 'verbose',
   logLevel: 'verbose',
   //
   // Enables colors for log output.
@@ -118,7 +117,15 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: http://webdriver.io/guide/testrunner/reporters.html
-  reporters: ['dot', 'spec'],
+  reporters: ['spec', 'allure'],
+  reporterOptions: {
+    // allure: {
+    //   outputDir: 'reports/data/allure-results',
+    // },
+    allure: {
+      outputDir: 'allure-results',
+    },
+  },
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
