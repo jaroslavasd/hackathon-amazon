@@ -29,4 +29,4 @@ class SignIn extends Page {
   }
 }
 
-module.exports = SignIn;
+export default new SignIn();

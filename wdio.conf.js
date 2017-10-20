@@ -158,6 +158,7 @@ exports.config = {
     global.Assertion = chai.Assertion;
     global.assert = chai.assert;
     chai.Should();
+    global.waitForElementTimeOut = 20000;
     browser.timeouts('script', 60000);
     browser.windowHandleMaximize();
   },
