@@ -8,11 +8,12 @@ class SearchPage extends Page {
   get sortOption() { return browser.element('#sort'); }
   get starInput() { return browser.element('.a-icon.a-icon-star-medium'); }
   get leftNavPane() { return browser.element('#leftNav'); }
+  get resultsContainer() { return browser.element('#resultsCol'); }
+  get resultLink() { return browser.element('[class="a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal"]'); }
 
   // Methods..
   searchForProduct(productName) {
-    this.searchInput.click();
-    browser.keys(productName);
+    this.searchInput.setValue(productName);
     this.searchButton.click();
   }
 
@@ -26,6 +27,7 @@ class SearchPage extends Page {
   }
 
   selectMostReliable() {
+    browser.waitForVisible(this.searchSortForm.selector, 5000);
     this.starInput.click();
   }
 
@@ -33,6 +35,12 @@ class SearchPage extends Page {
     browser.waitForVisible(this.leftNavPane.selector, 5000);
     browser.element(`span=${category}`).click();
   }
+
+  selectProductByIndex(index) {
+    browser.waitForVisible(this.resultsContainer.selector, 5000);
+    browser.waitForVisible(this.resultLink.selector, 5000);
+    browser.elements(this.resultLink.selector).value[index].click();
+  }
 }
 
-export default SearchPage;
+export default new SearchPage();
