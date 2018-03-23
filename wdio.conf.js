@@ -42,19 +42,9 @@ exports.config = {
   // https://docs.saucelabs.com/reference/platforms-configurator
   //
   capabilities: [{
-    // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-    // grid with only 5 firefox instance available you can make sure that not more than
-    // 5 instance gets started at a time.
-    maxInstances: 5,
-    //
     browserName: 'chrome', // options: chrome || firefox || phantomjs
   },
   {
-    // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-    // grid with only 5 firefox instance available you can make sure that not more than
-    // 5 instance gets started at a time.
-    maxInstances: 5,
-    //
     browserName: 'firefox', // options: chrome || firefox || phantomjs
   }],
 
@@ -70,8 +60,7 @@ exports.config = {
   sync: true,
   //
   // Level of logging verbosity: silent | verbose | command | data | result | error
-  // logLevel: 'verbose',
-  logLevel: 'verbose',
+  logLevel: 'error',
   //
   // Enables colors for log output.
   coloredLogs: true,
@@ -127,7 +116,15 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: http://webdriver.io/guide/testrunner/reporters.html
-  reporters: ['dot', 'spec'],
+  reporters: ['spec', 'allure'],
+  reporterOptions: {
+    // allure: {
+    //   outputDir: 'reports/data/allure-results',
+    // },
+    allure: {
+      outputDir: 'allure-results',
+    },
+  },
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
