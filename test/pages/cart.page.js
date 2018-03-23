@@ -11,9 +11,13 @@ class CartPage extends Page {
     return new CheckoutPage();
   }
 
-  open() {
-    super.open('gp/cart/view.html/ref=nav_cart');
+  getCardText() {
+
   }
+
+  // open() {
+  //   super.open('gp/cart/view.html/ref=nav_cart');
+  // }
 }
 
 export default new CartPage();

@@ -5,7 +5,7 @@ import CartPage from '../pages/cart.page';
 import { products } from '../config';
 
 describe('amazon page', () => {
-  it('do shoopping for ', () => {
+  it('do shopping for ', () => {
     SignInPage.open();
     SignInPage.login();
 
@@ -21,11 +21,15 @@ describe('amazon page', () => {
         if (ProductPage.getAvailability() === 'In Stock.') {
           break;
         }
+        // ProductPage.back();
         index += 1;
       }
 
       ProductPage.addToCart();
     });
     CartPage.open();
+    // CartPage.getCardText().should.contain('playstation', 'no playstation found');
+    // CartPage.getCardText().should.contain('camera', 'no camera found');
+    // CartPage.getCardText().should.contain('just dance', 'no just dance found');
   });
 });
